@@ -6,7 +6,7 @@ import PathResult from '../components/PathResult';
 import axios from 'axios';
 
 
-const Search = ({ location }) => {
+const Search = () => {
   const [showResult, setShowResult] = useState("hidden");
   const [data, setData] = useState(null);
   const [url, setUrl] = useState("/search");
@@ -22,6 +22,7 @@ const Search = ({ location }) => {
   }
 
   const alterType = (e) => {
+    e.preventDefault();
     if (e.target.id === "distance") {
       setType("DISTANCE");
     } else {
