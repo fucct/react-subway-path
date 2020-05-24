@@ -1,30 +1,8 @@
 import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
 
-function reducer(state, action) {
-  return {
-    ...state,
-    [action.name]: action.value
-  };
-}
+function InputStation({source, target, onChange, onClick, url}) {
 
-function InputStation({toggleHidden, url, searchPath, type }) {
-  const [state, dispatch] = useReducer(reducer, {
-    source: "",
-    target: "",
-  });
-
-  const { source, target } = state;
-
-  const onChange = e => {
-    dispatch(e.target);
-  };
-
-
-  const onClick = () => {
-    searchPath(source, target, type);
-    toggleHidden();
-  }
 
   return (
     <form className="bg-white mb-4">
@@ -53,7 +31,7 @@ function InputStation({toggleHidden, url, searchPath, type }) {
           />
         </div>
       </div>
-      <Link to={"/search?source="+source+"&target="+target+"&type="+type}>
+      <Link to={url}>
         <button type="submit" id="search-button"
                 className="w-full text-sm bg-yellow-500 hover:bg-yellow-400 hover:text-gray-700 text-gray-800 font-bold py-2 px-4 rounded-sm"
                 onClick={onClick}>
