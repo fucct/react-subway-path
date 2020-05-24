@@ -35,7 +35,6 @@ const Search = ({ location }) => {
         try {
           const response = await axios.get(url);
           setData(response.data);
-          console.log(response.data);
         }
         catch (e) {
           console.log(e);
@@ -43,7 +42,7 @@ const Search = ({ location }) => {
       };
       fetchData();
     }
-  }, [url]);
+  }, [url, type]);
 
   useEffect(() => {
     return () => {

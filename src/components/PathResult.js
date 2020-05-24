@@ -14,12 +14,12 @@ function PathResult({ showResult, data, type, alterType }) {
       <ul className="flex border-b w-full">
         <li id="shortest-distance-tab" className="-mb-px w-2/4 active-tab tab-menu">
           <a className="w-full text-center inline-block py-2 px-4 font-semibold"
-             id="distance" onClick={alterType} href="#">최단거리</a>
+             id="distance" onClick={(e) => alterType(e)} href="#">최단거리</a>
         </li>
         <li id="minimum-time-tab" className="-mb-px w-2/4 tab-menu">
           <a className="w-full text-center bg-white inline-block py-2 px-4 font-semibold"
              id="duration"
-             onClick={alterType} href="#">최소시간</a>
+             onClick={e=>alterType(e)} href="#">최소시간</a>
         </li>
       </ul>
       <div id="search-result">

@@ -2,16 +2,17 @@ import React from 'react';
 import PathTemplates from './PathTemplates';
 
 function ResultTemplates({ result }) {
+  let id = 1;
   function pathTemplate(name, index, lastIndex){
     if(index ===0 || index === lastIndex){
       if(index===lastIndex){
-        return <><span className="mdi mdi-arrow-right-bold text-gray-500"/><span className="font-bold">{name}</span></>
+        return <><span className="mdi mdi-arrow-right-bold text-gray-500"/><span key={id++} className="font-bold">{name}</span></>
       }else{
-        return <span className="font-bold">{name}</span>
+        return <span key={id++} className="font-bold">{name}</span>
       }
     } else{
       return <><span className="mdi mdi-arrow-right-bold text-gray-500"/>
-        <span className="text-gray-600">{name}</span></>
+        <span key={id++} className="text-gray-600">{name}</span></>
     }
   }
   if (result) {
